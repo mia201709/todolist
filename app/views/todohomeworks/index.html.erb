@@ -1,0 +1,13 @@
+<table class="table table-striped table-condensed">
+  <% @todohomeworks.each do |todohomework| %>
+  <tr>
+    <td><%= todohomework.description %></td>
+    <td><%= todohomework.date%></td>
+    <td><%= link_to 'Edit',edit_todohomework_path(todohomework) %></td>
+    <td><%= link_to 'Delete', todohomework_path(todohomework), method: :delete, data:{ confirm: "Are you sure?" } %>
+    </td>    
+   </tr>
+  <% end %>
+</table>
+<hr>
+<%=link_to 'New Task',new_todohomework_path ,class: 'btn btn-default' %>
